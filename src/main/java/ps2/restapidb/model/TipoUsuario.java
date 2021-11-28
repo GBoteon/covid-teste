@@ -1,4 +1,4 @@
-package ps2.restapidb;
+package ps2.restapidb.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +11,8 @@ import javax.persistence.Table;
 public class TipoUsuario {
     
     @Id @GeneratedValue
-    private long id;
-    private String nome;
+    protected long id;
+    protected String nome;
     
     public TipoUsuario() {
 

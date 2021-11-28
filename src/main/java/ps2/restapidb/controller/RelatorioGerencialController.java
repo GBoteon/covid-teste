@@ -1,29 +1,27 @@
-package ps2.restapidb;
-
-;
-import java.io.IOException;
+package ps2.restapidb.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.web.multipart.MultipartFile;
+import ps2.restapidb.repository.EstadoSaudeRepo;
+import ps2.restapidb.repository.SintomaRepo;
+import ps2.restapidb.repository.UsuarioRepo;
 
 @RestController
 public class RelatorioGerencialController {
     @Autowired
-    private EstadoSaudeRepo estadoSaudeRepo;
+    protected EstadoSaudeRepo estadoSaudeRepo;
     
     @Autowired
-    private UsuarioRepo usuarioRepo;
+    protected UsuarioRepo usuarioRepo;
     
     @Autowired
-    private SintomaRepo sintomaRepo;
+    protected SintomaRepo sintomaRepo;
 
     @GetMapping("/api/relatorios/registros/qtd")
     public List<Object> getQtdRegistros(

@@ -1,4 +1,4 @@
-package ps2.restapidb;
+package ps2.restapidb.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,18 +14,18 @@ public class Usuario {
 
     @Id
     @GeneratedValue
-    private long id;
-    private int matricula;
-    private String nome;
-    private String setor;
-    private String senha;
-    private String dataNasc;
-    private String cidade;
-    private String estado;
-    private Long id_tipo_usuario;
+    protected long id;
+    protected int matricula;
+    protected String nome;
+    protected String setor;
+    protected String senha;
+    protected String dataNasc;
+    protected String cidade;
+    protected String estado;
+    protected Long id_tipo_usuario;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    private TipoUsuario tipoUsuario;
+    protected TipoUsuario tipoUsuario;
 
     public Usuario() {
 

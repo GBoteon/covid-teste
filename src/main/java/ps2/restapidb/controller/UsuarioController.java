@@ -1,6 +1,5 @@
-package ps2.restapidb;
+package ps2.restapidb.controller;
 
-import com.fasterxml.jackson.databind.ser.impl.ObjectIdWriter;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.web.multipart.MultipartFile;
+import ps2.restapidb.LerCSV;
+import ps2.restapidb.model.TipoUsuario;
+import ps2.restapidb.model.Usuario;
+import ps2.restapidb.repository.TipoUsuarioRepo;
+import ps2.restapidb.repository.UsuarioRepo;
 
 @RestController
 public class UsuarioController {

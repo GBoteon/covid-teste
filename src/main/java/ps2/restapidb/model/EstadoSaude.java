@@ -1,8 +1,7 @@
-package ps2.restapidb;
+package ps2.restapidb.model;
 
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,26 +22,26 @@ public class EstadoSaude {
 
     @Id
     @GeneratedValue
-    private long id;
-    
-    private boolean isBem = true;
-    
+    protected long id;
+
+    protected boolean isBem = true;
+
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    private Usuario usuario;
-    
+    protected Usuario usuario;
+
     @Transient
-    private long idUsuario;
-    
+    protected long idUsuario;
+
     @Column(name = "dtCriacao", insertable = false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dtCriacao;
+    protected Date dtCriacao;
     
     @ManyToMany
     @JoinTable(
             name="estado_saude_sintomas", 
             joinColumns = {@JoinColumn(name="estado_saude_id")}, 
             inverseJoinColumns = {@JoinColumn(name="sintoma_id")})
-    List <Sintoma> sintomas;
+    public List <Sintoma> sintomas;
 
     public EstadoSaude() {
 

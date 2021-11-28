@@ -1,7 +1,9 @@
-package ps2.restapidb;
+package ps2.restapidb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import ps2.restapidb.model.TipoUsuario;
+import ps2.restapidb.repository.TipoUsuarioRepo;
 
 import java.util.ArrayList;
 import java.util.List;

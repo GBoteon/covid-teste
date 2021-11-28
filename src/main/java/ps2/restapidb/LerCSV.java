@@ -8,6 +8,8 @@ package ps2.restapidb;
  *
  * @author danie
  */
+import ps2.restapidb.model.Usuario;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

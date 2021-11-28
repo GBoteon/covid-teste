@@ -1,7 +1,5 @@
-package ps2.restapidb;
+package ps2.restapidb.controller;
 
-;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +9,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.web.multipart.MultipartFile;
+
+import ps2.restapidb.model.EstadoSaude;
+import ps2.restapidb.model.Sintoma;
+import ps2.restapidb.model.Usuario;
+import ps2.restapidb.repository.EstadoSaudeRepo;
+import ps2.restapidb.repository.SintomaRepo;
+import ps2.restapidb.repository.UsuarioRepo;
 
 @RestController
 public class EstadoSaudeController {
     @Autowired
-    private EstadoSaudeRepo estadoSaudeRepo;
+    protected EstadoSaudeRepo estadoSaudeRepo;
     
     @Autowired
-    private UsuarioRepo usuarioRepo;
+    protected UsuarioRepo usuarioRepo;
     
     @Autowired
-    private SintomaRepo sintomaRepo;
+    protected SintomaRepo sintomaRepo;
 
     @GetMapping("/api/estado-saude")
     public List<EstadoSaude> getEstadosSaude(){

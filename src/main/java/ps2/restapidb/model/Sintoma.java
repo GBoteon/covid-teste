@@ -1,6 +1,5 @@
-package ps2.restapidb;
+package ps2.restapidb.model;
 
-import java.util.List;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +15,8 @@ import javax.persistence.Table;
 public class Sintoma {
 
     @Id @GeneratedValue
-    private long id;
-    private String nome;
+    protected long id;
+    protected String nome;
 
     @ManyToMany
     @JoinTable(
@@ -25,7 +24,7 @@ public class Sintoma {
         joinColumns = @JoinColumn(name = "sintoma_id"),
         inverseJoinColumns = @JoinColumn(name = "estado_saude_id")
     )
-    private Set<EstadoSaude> estadosSaude;
+    protected Set<EstadoSaude> estadosSaude;
 
     public Sintoma() {
 
