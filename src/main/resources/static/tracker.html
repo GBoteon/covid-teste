@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">COVID TRACKER</a>
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li><a href="tracker.html" class="nav-link text-secondary">Início</a></li>
+                    <li><a href="historico.html" class="nav-link text-white">Histórico</a></li>
+                    <li class="nav-item dropdown show">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opções
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="membros.html">Cadastro de Membros</a>
+                            <a class="dropdown-item" href="sintomas.html">Cadastro de Sintomas</a>
+                            <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.html">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+
+    </nav>
+
+    <body>
+        <header class="container mt-5">
+            <div class="row">
+                <h3>Olá, <b id="username"></b>!</h3>
+            </div>
+        </header>
+        <div class="d-flex w-100 h-100 p-3 mx-auto justify-content-center flex-column col-md-8">
+            <div class="pt-5 mx-auto">
+                <div class="text-center mb-5">
+                    <h1>Como você está se sentindo hoje?</h1>
+                    <h3>Por favor preencha os dados abaixo para registrar seu estado de saúde.</h3>
+                </div>
+
+                <div class="tracker-card">
+
+                    <div id="fwell" class="col-md-6 centralize fwell" onclick="selectState(1)">
+                        <h2 class="text-white">BEM</h2>
+                    </div>
+                    <div id="fbad" class="col-md-6 centralize fbad" onclick="selectState(2)">
+                        <h2 class="text-white">NÃO MUITO BEM</h2>
+                    </div>
+
+                    <div id="fwell-step-1" class="col-md-12 centralize flex-column hide">
+                        <div class="mb-5">
+                            <h2>Você está se sentindo: BEM</h2>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-secondary" onclick="location.reload()">Cancelar</button>
+                            <button type="button" class="btn btn-primary" onclick="submitState(1)">Confirmar</button>
+                        </div>
+                    </div>
+                    <div id="fwell-step-2" class="col-md-6 centralize flex-column hide">
+                        <p>Obrigado pelo seu registro!</p>
+                        <p id="currentTime"></p>
+                        <button type="button" class="btn btn-secondary" onclick="location.reload()">Voltar</button>
+                    </div>
+
+                    <div id="fbad-step-1" class="col-md-12 centralize flex-column hide">
+                        <div class="mb-5">
+                            <h2>Você está se sentindo: NÃO MUITO BEM</h2>
+                        </div>
+
+                        <div id="sintList" class="row col-md-10 mb-5"></div>
+
+                        <div>
+                            <button type="button" class="btn btn-secondary" onclick="location.reload()">Cancelar</button>
+                            <button type="button" class="btn btn-primary" onclick="submitState(2)">Confirmar</button>
+                        </div>
+                    </div>
+                    <div id="fbad-step-2" class="col-md-10 centralize flex-column hide">
+                        <div class="mb-2 text-center">
+                            <p>Obrigado pelo registro de informações!</p>
+                            <p>Pelos sintomas selecionados, recomendamos que busque orientações em um canal oficial do serviço de saúde.</p>
+                            <p>Para mais informações, acesse: <a href="https://aps.saude.gov.br/ape/corona/telesus">https://aps.saude.gov.br/ape/corona/telesus</a></p>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="location.reload()">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
+
+<script>
+    const fbad = document.getElementById('fbad');
+    const fwell = document.getElementById('fwell');
+    const fwellStep1 = document.getElementById('fwell-step-1');
+    const fwellStep2 = document.getElementById('fwell-step-2');
+    const fbadStep1 = document.getElementById('fbad-step-1');
+    const fbadStep2 = document.getElementById('fbad-step-2');
+    const listaSintomas = document.querySelector('#sintList');
+    const currentTime = document.querySelector('#currentTime');
+    const username = document.querySelector('#username');
+    username.innerText = localStorage.getItem('username');
+
+    getSintomas();
+
+    async function getSintomas() {
+        const URL = `/api/sintomas`;
+        fetch(URL)
+            .then(resposta => { if (!resposta.ok) throw Error(resposta.status); return resposta;})
+            .then(resposta => resposta.json())
+            .then(jsonResponse => listarSintomas(jsonResponse))
+            .catch(function(error) { listaSintomas.innerHTML = "Erro ao listar sintomas (código " + error.message + ")";});
+    }
+
+    function listarSintomas(sintomas){
+        let sintList = '';
+        let n = sintomas.length;
+        let sintArray = [];
+        for (let i = 0; i < n; i++) {
+            let sint = sintomas[i];
+            sintArray.push(sintomas[i]);
+            sintList +=
+                `<div class="col-md-4 text-nowrap">` +
+                    `<input id="sintoma-${sint.id}" type="checkbox" value="${sint.id}" class="check-sintoma">` +
+                    `<label for="sintoma-${sint.id}">${(sint.nome)}</label>` +
+                `</div>`;
+        }
+        listaSintomas.innerHTML = sintList;
+    }
+
+    function selectState(state){
+
+        if(state === 1){
+            fbad.classList.add('hide');
+            fwell.classList.add('hide');
+
+            fwellStep1.classList.remove('hide');
+
+        } else if (state === 2){
+            fbad.classList.add('hide');
+            fwell.classList.add('hide');
+
+            fbadStep1.classList.remove('hide');
+        }
+    }
+
+    function submitState(state){        
+        const currentUser = localStorage.getItem('userID');
+        if(state === 1){
+            let today = new Date();
+
+            fetch("/api/estado-saude", {
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": JSON.stringify({
+                    "isBem": 1,
+                    "idUsuario": currentUser,
+                    "sintomas": []
+                })
+            })
+            .then((response) => {
+                response.json();
+                fwellStep1.classList.add('hide');
+                fwellStep2.classList.remove('hide');
+            })
+            .catch(error => {
+                alertSwallFalha('Um erro inesperado aconteceu, por favor tente novamente');
+            });
+            currentTime.innerHTML = today;
+
+        } else if (state === 2){            
+            const sintomas = [];
+            document.querySelectorAll('.check-sintoma:checked').forEach(function(s){ 
+                sintomas.push(parseInt(s.value)); 
+            });
+            if(sintomas.length <= 0){
+                alertSwallFalha('Necessário informar ao menos um sintoma');
+                return false;
+            }
+            
+            fetch("/api/estado-saude", {
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": JSON.stringify({
+                    "isBem": 0,
+                    "idUsuario": currentUser,
+                    "sintomas": sintomas
+                })
+            })
+            .then((response) => { 
+                response.json();        
+                fbadStep1.classList.add('hide');
+                fbadStep2.classList.remove('hide');
+             })
+            .catch(error => {
+                alertSwallFalha('Um erro inesperado aconteceu, por favor tente novamente');
+            });
+        }
+    }
+    
+    function alertSwallFalha(text){
+        Swal.fire({
+            title: 'Ops!',
+            text: text,
+            icon: 'error',
+            confirmButtonText: 'Ok',
+            confirmButtonColor: '#d33'
+        })
+    }
+</script>
