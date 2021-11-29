@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 
-@Table(name="sintomas")
+@Table(name="sintoma")
 public class Sintoma {
 
     @Id @GeneratedValue

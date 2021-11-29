@@ -22,25 +22,37 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce2cd238-cc92-4bae-a1ed-b0038c522b57" name="Default Changelist" comment="wip: form cadastro estado de saude dinamico">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="ce2cd238-cc92-4bae-a1ed-b0038c522b57" name="Default Changelist" comment="Atualização">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/LerCSV_Aluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/AlunoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/FuncionarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Aluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Membro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/AlunoRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/FuncionarioRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/MembroRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/RoleRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/EstadoSaude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/EstadoSaude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/EstadoSaudeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/EstadoSaudeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/EstadoSaudeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/EstadoSaudeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/LerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/LerCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/RelatorioGerencialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/RelatorioGerencialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/Sintoma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Sintoma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/SintomaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/SintomaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/SintomaRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/SintomaRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/TipoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/TipoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/TipoUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/TipoUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/TipoUsuarioRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/TipoUsuarioRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/UsuarioRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/UsuarioRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/LerCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/LerCSV_Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/RelatorioGerencial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/RelatorioGerencial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/EstadoSaudeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/EstadoSaudeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/RelatorioGerencialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/RelatorioGerencialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/TipoUsuarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/controller/UsuarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/EstadoSaude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/EstadoSaude.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Sintoma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Sintoma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/TipoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/model/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/EstadoSaudeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/EstadoSaudeRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/TipoUsuarioRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ps2/restapidb/repository/UsuarioRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/membros.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/membros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/novo_membro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/novo_membro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/novo_sintoma.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/novo_sintoma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/usuario.html" afterDir="false" />
     </list>
     <list id="496fb3b2-cbc9-4bc2-9e4e-f61744c33fdb" name="Revert &quot;Front end updated&quot;" comment="Revert &quot;Front end updated&quot;&#10;&#10;This reverts commit 1a759005" />
     <list id="fca3c89e-c930-4e83-8573-d21336c8d354" name="Revert &quot;heroku fix&quot;" comment="Revert &quot;heroku fix&quot;&#10;&#10;This reverts commit 8e034404" />
@@ -61,6 +73,8 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -224,7 +238,7 @@
       <workItem from="1637932885769" duration="1092000" />
       <workItem from="1637963049980" duration="10860000" />
       <workItem from="1638127529710" duration="593000" />
-      <workItem from="1638132244341" duration="3117000" />
+      <workItem from="1638132244341" duration="15534000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <created>1633217589128</created>
@@ -261,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637714568113</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Atualização">
+      <created>1638135441639</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638135441639</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +336,19 @@
     <MESSAGE value="Front end updated" />
     <MESSAGE value="wip: mock do form de cadastro de sintomas" />
     <MESSAGE value="wip: form cadastro estado de saude dinamico" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: form cadastro estado de saude dinamico" />
+    <MESSAGE value="Atualização" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/static/historico.html</url>
+          <line>100</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

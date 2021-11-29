@@ -87,7 +87,7 @@
     getUsuarios();
 
     async function getUsuarios() {
-        const URL = `/api/usuarios`;
+        const URL = `/api/membros`;
         fetch(URL)
             .then(resposta => { if (!resposta.ok) throw Error(resposta.status); return resposta;})
             .then(resposta => resposta.json())
@@ -95,11 +95,11 @@
             .catch(function(error) { paragrafoMensagem.innerHTML = "Erro ao listar usuários (código " + error.message + ")";});
     }
 
-    function fillTable( usuarios ) {
+    function fillTable( membros ) {
         let linhasTabela = '';
-        let n = usuarios.length;
+        let n = membros.length;
         for (let i = 0; i < n; i++) {
-            let user = usuarios[i];
+            let user = membros[i];
             let userType = user.idTipoUsuario;
             if (userType === 1){
                 userType = 'Admin';
@@ -136,7 +136,7 @@
               console.log(login)
               var data = new FormData();
               data.append('file', login);
-              return fetch(`api/usuarios/csv`, {
+              return fetch(`api/membros/csv`, {
                     "method": "POST",
                     "body": data
                   })

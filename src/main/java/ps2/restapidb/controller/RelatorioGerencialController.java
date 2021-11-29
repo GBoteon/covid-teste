@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import ps2.restapidb.repository.EstadoSaudeRepo;
 import ps2.restapidb.repository.SintomaRepo;
-import ps2.restapidb.repository.UsuarioRepo;
+import ps2.restapidb.repository.MembroRepo;
 
 @RestController
 public class RelatorioGerencialController {
@@ -18,7 +18,7 @@ public class RelatorioGerencialController {
     protected EstadoSaudeRepo estadoSaudeRepo;
     
     @Autowired
-    protected UsuarioRepo usuarioRepo;
+    protected MembroRepo membroRepo;
     
     @Autowired
     protected SintomaRepo sintomaRepo;

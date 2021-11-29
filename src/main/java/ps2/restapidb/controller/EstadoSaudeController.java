@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 import ps2.restapidb.model.EstadoSaude;
+import ps2.restapidb.model.Membro;
 import ps2.restapidb.model.Sintoma;
-import ps2.restapidb.model.Usuario;
 import ps2.restapidb.repository.EstadoSaudeRepo;
 import ps2.restapidb.repository.SintomaRepo;
-import ps2.restapidb.repository.UsuarioRepo;
+import ps2.restapidb.repository.MembroRepo;
 
 @RestController
 public class EstadoSaudeController {
@@ -23,7 +23,7 @@ public class EstadoSaudeController {
     protected EstadoSaudeRepo estadoSaudeRepo;
     
     @Autowired
-    protected UsuarioRepo usuarioRepo;
+    protected MembroRepo membroRepo;
     
     @Autowired
     protected SintomaRepo sintomaRepo;
@@ -48,7 +48,7 @@ public class EstadoSaudeController {
     @PostMapping("/api/estado-saude")
     public String createEstadoSaude(@RequestBody EstadoSaude estado) {   
         
-        Optional<Usuario> optionUsuario = usuarioRepo.findById(estado.getIdUsuario());
+        Optional<Membro> optionUsuario = membroRepo.findById(estado.getIdUsuario());
         if (!optionUsuario.isPresent()) {
             return (
                "{ \"success\": false, \"estado_saude_id\": 0 }" 

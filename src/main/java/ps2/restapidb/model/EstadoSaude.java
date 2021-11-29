@@ -27,7 +27,7 @@ public class EstadoSaude {
     protected boolean isBem = true;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    protected Usuario usuario;
+    protected Membro membro;
 
     @Transient
     protected long idUsuario;
@@ -77,12 +77,12 @@ public class EstadoSaude {
         this.isBem = isBem;
     }    
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Membro getUsuario() {
+        return membro;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Membro membro) {
+        this.membro = membro;
     }
 
     public long getIdUsuario() {

@@ -70,9 +70,9 @@
                         <div class="form-group col-md-6">
                             <label for="tipo">Tipo</label>
                             <select class="form-control" id="tipo">
-                                <option value="1">Admin</option>
-                                <option value="2">Membro</option>
-                                <option value="3">Professor</option>
+                                <option value="1">Funcionario</option>
+                                <option value="2">Aluno</option>
+                                <option value="3">Admin</option>
                             </select>
                         </div>
                     </div>
@@ -114,25 +114,25 @@
     getUserType();
 
     function goBack() {
-        window.location.href = "membros.html"
+        window.location.href = "usuario.html"
     }
 
     paragrafoMensagem.innerHTML = 'Após preencher os dados solicitados, clique em "Salvar"'
 
     async function criarUsuario() {
         const URL = `/api/usuarios`;
-        const usuario = {
+        const membro = {
             'nome': nome.value,
-            'matricula': matricula.value,
+            'num_funcional': matricula.value,
             'setor': setor.value,
-            'idTipoUsuario': tipo.value,
-            'dataNasc': dataNasc.value,
+            'idRole': tipo.value,
+            'data_nascimento': dataNasc.value,
             'estado': estado.value,
             'cidade': cidade.value
         };
         const postRequest = {
             method: 'POST',
-            body: JSON.stringify(usuario),
+            body: JSON.stringify(membro),
             headers: { 'Content-type': 'application/json' }
         };
         fetch(URL, postRequest)
@@ -160,7 +160,7 @@
         for (let i = 0; i < n; i++) {
             let type = tipos[i];
             tipo +=
-                `<option value="${type.id}">${capitalize(type.nome)}</option>`;
+                `<option value="${type.idRole}">${capitalize(type.name)}</option>`;
         }
         seletor.innerHTML = tipo;
     }
